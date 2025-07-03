@@ -84,7 +84,7 @@ const PhaseBox = ({
         .fill("")
         ?.map((_, idx) => {
           return (
-            <View style={styles.phraseBox}>
+            <View style={styles.phraseBox} key={idx}>
               <Text>{idx + 1} Hello</Text>
             </View>
           );

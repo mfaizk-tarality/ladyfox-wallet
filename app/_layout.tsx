@@ -36,11 +36,23 @@ export default function RootLayout() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
+            name="onboarding/auth/verify-passcode"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
             name="onboarding/enable-notification"
             options={{ headerShown: false }}
           />
           <Stack.Screen
             name="onboarding/wallet-ready"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="onboarding/secret-phrase/semi-fill"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="onboarding/secret-phrase/empty"
             options={{ headerShown: false }}
           />
         </Stack>
