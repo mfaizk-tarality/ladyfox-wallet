@@ -27,7 +27,11 @@ const Onboarding = () => {
           >
             Create New Wallet
           </StyledButton>
-          <StyledOutlineButton>I already have a wallet</StyledOutlineButton>
+          <StyledOutlineButton
+            onPress={() => router.push("/onboarding/secret-phrase/empty")}
+          >
+            I already have a wallet
+          </StyledOutlineButton>
           <SizableText textAlign="center">
             By tapping any button you agree and consent to our{" "}
             <PrimaryText>Terms of Service</PrimaryText> and{" "}
