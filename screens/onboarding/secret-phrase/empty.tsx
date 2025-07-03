@@ -93,6 +93,7 @@ const Empty = () => {
         <YStack gap={"$4"}>
           <StyledButton
             // disabled
+            marginTop={"$4"}
             onPress={() => router.push("/onboarding/auth/verify-passcode")}
           >
             Continue

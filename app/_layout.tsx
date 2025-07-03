@@ -55,6 +55,7 @@ export default function RootLayout() {
             name="onboarding/secret-phrase/empty"
             options={{ headerShown: false }}
           />
+          <Stack.Screen name="home/index" options={{ headerShown: false }} />
         </Stack>
       </TamaguiProvider>
     </SafeAreaView>
