@@ -1,9 +1,12 @@
+import { opacify } from "@/theme/utils";
+import { colors } from "@/ui/colors";
 import { defaultConfig } from "@tamagui/config/v4";
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
+import { ChevronLeft } from "lucide-react-native";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { createTamagui, TamaguiProvider } from "tamagui";
+import { createTamagui, TamaguiProvider, View, XStack } from "tamagui";
 
 const config = createTamagui(defaultConfig);
 export default function RootLayout() {
@@ -12,7 +15,35 @@ export default function RootLayout() {
       <StatusBar style="dark" />
 
       <TamaguiProvider config={config} defaultTheme="dark">
-        <Stack>
+        <Stack
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: colors.black,
+            },
+            headerTintColor: colors.white,
+            headerShadowVisible: false,
+            headerLeft: () => (
+              <XStack>
+                <View
+                  justifyContent="center"
+                  alignItems="center"
+                  backgroundColor={opacify(10, colors.white)}
+                  height={40}
+                  width={40}
+                  borderRadius={"$10"}
+                  marginRight={"$2"}
+                  onPress={() => {
+                    if (router.canGoBack()) {
+                      router.back();
+                    }
+                  }}
+                >
+                  <ChevronLeft color={colors.white} />
+                </View>
+              </XStack>
+            ),
+          }}
+        >
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen
             name="onboarding/index"
@@ -58,7 +89,23 @@ export default function RootLayout() {
             name="onboarding/secret-phrase/empty"
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="(home)" options={{ headerShown: false }} />{" "}
+          <Stack.Screen name="(home)" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="accounts/index"
+            options={{
+              headerShown: true,
+              title: "Accounts",
+              headerBackVisible: false,
+            }}
+          />
+          <Stack.Screen
+            name="accounts/edit"
+            options={{
+              headerShown: true,
+              title: "Edit Account Name",
+              headerBackVisible: false,
+            }}
+          />
         </Stack>
       </TamaguiProvider>
     </SafeAreaView>

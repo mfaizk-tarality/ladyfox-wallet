@@ -1,25 +1,19 @@
 import { colors } from "@/ui/colors";
-import { Check, ChevronDown, ChevronUp } from "lucide-react-native";
-import React, { useState } from "react";
+import { Check } from "lucide-react-native";
+import React from "react";
 import { OtpInput } from "react-native-otp-entry";
 import {
-  Adapt,
   Button,
   Checkbox,
   CheckboxProps,
   FontSizeTokens,
-  getFontSize,
+  Input,
   ScrollView,
-  Select,
-  SelectProps,
-  Sheet,
   SizableText,
   styled,
   View,
   XStack,
-  YStack,
 } from "tamagui";
-import { LinearGradient } from "tamagui/linear-gradient";
 
 export const Surface = styled(XStack, {
   flexWrap: "wrap",
@@ -122,3 +116,7 @@ export const SecureOtp = ({
     />
   );
 };
+
+export const StyledInput = styled(Input, {
+  borderRadius: 30,
+});

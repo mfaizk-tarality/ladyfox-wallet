@@ -1,5 +1,6 @@
 import { opacify } from "@/theme/utils";
 import { colors } from "@/ui/colors";
+import { router } from "expo-router";
 import { Bell, ChevronDown, ScanQrCode } from "lucide-react-native";
 import React from "react";
 import { StyleSheet } from "react-native";
@@ -18,7 +19,7 @@ const Header = () => {
           </Avatar>
         </View>
       </View>
-      <View style={styles.middleBar}>
+      <View style={styles.middleBar} onPress={() => router.push("/accounts")}>
         <Avatar circular size="$1.5">
           <Avatar.Image
             accessibilityLabel="Cam"
