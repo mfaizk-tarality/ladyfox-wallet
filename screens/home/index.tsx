@@ -1,6 +1,7 @@
 import { CustomScrollView, PrimaryText, Surface } from "@/component";
 import { opacify } from "@/theme/utils";
 import { colors } from "@/ui/colors";
+import { router } from "expo-router";
 import {
   ArrowDownLeft,
   ArrowUpRight,
@@ -138,7 +139,9 @@ const Home = () => {
                 })}
             </View>
             <View style={styles.manageCryptoContainer}>
-              <PrimaryText>Manage Crypto</PrimaryText>
+              <PrimaryText onPress={() => router.push("/token")}>
+                Manage Crypto
+              </PrimaryText>
             </View>
           </View>
         </CustomScrollView>

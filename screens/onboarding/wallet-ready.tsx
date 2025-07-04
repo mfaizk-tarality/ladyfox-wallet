@@ -1,4 +1,5 @@
 import { Description, PrimaryText, StyledButton, Surface } from "@/component";
+import { router } from "expo-router";
 import React from "react";
 import { H3, Image, View, YStack } from "tamagui";
 
@@ -22,7 +23,7 @@ const WalletReady = () => {
           <YStack width={"100%"} gap={"$4"}>
             <StyledButton
               variant="outlined"
-              //   onPress={() => router.push("/onboarding/wallet-ready")}
+              onPress={() => router.push("/(home)")}
             >
               Done
             </StyledButton>

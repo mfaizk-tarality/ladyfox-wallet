@@ -11,6 +11,7 @@ import {
   ScrollView,
   SizableText,
   styled,
+  Switch,
   View,
   XStack,
 } from "tamagui";
@@ -119,4 +120,7 @@ export const SecureOtp = ({
 
 export const StyledInput = styled(Input, {
   borderRadius: 30,
+  backgroundColor: "transparent",
 });
+
+export const StyledSwitchTrack = styled(Switch, {});

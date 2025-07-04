@@ -3,7 +3,7 @@ import { colors } from "@/ui/colors";
 import { defaultConfig } from "@tamagui/config/v4";
 import { router, Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { ChevronLeft } from "lucide-react-native";
+import { ChevronLeft, Globe } from "lucide-react-native";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { createTamagui, TamaguiProvider, View, XStack } from "tamagui";
@@ -103,6 +103,43 @@ export default function RootLayout() {
             options={{
               headerShown: true,
               title: "Edit Account Name",
+              headerBackVisible: false,
+            }}
+          />
+          <Stack.Screen
+            name="token/index"
+            options={{
+              headerShown: true,
+              title: "Manage Crypto",
+              headerBackVisible: false,
+              headerRight: () => (
+                <XStack>
+                  <View
+                    justifyContent="center"
+                    alignItems="center"
+                    backgroundColor={opacify(10, colors.white)}
+                    height={40}
+                    width={40}
+                    borderRadius={"$10"}
+                    marginRight={"$2"}
+                    marginTop={"$1"}
+                    onPress={() => {
+                      // if (router.canGoBack()) {
+                      //   router.back();
+                      // }
+                    }}
+                  >
+                    <Globe color={colors.white} />
+                  </View>
+                </XStack>
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="token/add"
+            options={{
+              headerShown: true,
+              title: "Add Custom Token",
               headerBackVisible: false,
             }}
           />
