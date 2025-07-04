@@ -1,5 +1,6 @@
 import { defaultConfig } from "@tamagui/config/v4";
 import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { createTamagui, TamaguiProvider } from "tamagui";
@@ -8,6 +9,8 @@ const config = createTamagui(defaultConfig);
 export default function RootLayout() {
   return (
     <SafeAreaView style={styles.safeAreaView}>
+      <StatusBar style="dark" />
+
       <TamaguiProvider config={config} defaultTheme="dark">
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
@@ -55,7 +58,7 @@ export default function RootLayout() {
             name="onboarding/secret-phrase/empty"
             options={{ headerShown: false }}
           />
-          <Stack.Screen name="home/index" options={{ headerShown: false }} />
+          <Stack.Screen name="(home)" options={{ headerShown: false }} />{" "}
         </Stack>
       </TamaguiProvider>
     </SafeAreaView>
