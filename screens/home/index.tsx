@@ -95,7 +95,13 @@ const Home = () => {
                 .fill("")
                 ?.map((_, idx) => {
                   return (
-                    <View key={idx} style={styles.assetListItem}>
+                    <View
+                      key={idx}
+                      style={styles.assetListItem}
+                      onPress={() => {
+                        router.push("/user/asset/etherium");
+                      }}
+                    >
                       <View style={styles.listAvatarContainer}>
                         <Avatar circular size="$3.5">
                           <Avatar.Image
