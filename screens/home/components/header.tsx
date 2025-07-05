@@ -1,3 +1,4 @@
+import { useUIStore } from "@/store/ui-store";
 import { opacify } from "@/theme/utils";
 import { colors } from "@/ui/colors";
 import { router } from "expo-router";
@@ -7,14 +8,19 @@ import { StyleSheet } from "react-native";
 import { Avatar, SizableText, View, XStack } from "tamagui";
 
 const Header = () => {
+  const { networkModal, setNetworkModal } = useUIStore();
   return (
     <XStack style={styles.mainContainer}>
       <View style={styles.avatarContainer}>
         <View style={styles.avatarWhiteArea}>
-          <Avatar circular size="$1.5">
+          <Avatar
+            circular
+            size="$1.5"
+            onPress={() => setNetworkModal((p) => !p)}
+          >
             <Avatar.Image
               accessibilityLabel="Cam"
-              src="https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80"
+              src={require("@/assets/home/network/bnb.png")}
             />
           </Avatar>
         </View>

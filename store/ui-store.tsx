@@ -18,4 +18,10 @@ export const UIStoreProvider = ({
   );
 };
 
-export const useUIStore = () => useContext(UIStore);
+export const useUIStore = (): UiProps => {
+  const context = useContext(UIStore);
+  if (context === undefined) {
+    throw new Error("useUIStore must be used within a UIProvider");
+  }
+  return context;
+};

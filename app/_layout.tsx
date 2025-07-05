@@ -1,3 +1,4 @@
+import NetworkSheet from "@/component/network-sheet";
 import { UIStoreProvider } from "@/store/ui-store";
 import { opacify } from "@/theme/utils";
 import { colors } from "@/ui/colors";
@@ -145,7 +146,16 @@ export default function RootLayout() {
                 headerBackVisible: false,
               }}
             />
+            <Stack.Screen
+              name="network/add"
+              options={{
+                headerShown: true,
+                title: "Add Custom Network",
+                headerBackVisible: false,
+              }}
+            />
           </Stack>
+          <NetworkSheet />
         </UIStoreProvider>
       </TamaguiProvider>
     </SafeAreaView>
